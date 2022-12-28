@@ -111,3 +111,13 @@ switch (num)
     }
 }*/
 
+Console.WriteLine("Введите координату X точки1: ");
+int xa = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите координату Y точки1: ");
+int ya = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите координату X точки2: ");
+int xb = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите координату Y точки2: ");
+int yb = int.Parse(Console.ReadLine()!);
+double res = Math.Sqrt(Math.Pow(xb = xa, 2) + Math.Pow(yb = ya, 2));
+Console.WriteLine($"Расстояние между точками: {res:f2}");
