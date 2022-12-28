@@ -125,6 +125,53 @@ Console.WriteLine($"Расстояние между точками: {res:f2}");*
 /*Console.WriteLine("Введите число ");
 int n = int.Parse(Console.ReadLine()!);
 for (int i = 1; i <= n; i++){
-    Console.Write($"{Math.Pow(i, 2)} ");
+    Console.Write($"{Math.Pow(i, 2)}, ");
 }*/
 
+// Домашняя работа 2 (Базовые алгоритмы часть 2)----------------------------------------------------
+
+// Задача 1+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*Console.Write("Введите пятизначное число: ");
+string? number = Console.ReadLine();
+if (number is not null){
+    if (number.Length == 5){
+        if ((number[0] == number[4]) && (number[1] == number[3])){
+            Console.WriteLine($"{number} - палиндром");
+        }
+        else{
+            Console.WriteLine($"{number} - не палиндром");
+        }
+    }
+    else{
+        Console.WriteLine("Введено некорректное значение");
+    }
+}*/
+
+// Задача 2++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*double X1, Y1, Z1, X2, Y2, Z2;
+Console.WriteLine("Введите координаты первой точки X1:");
+X1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите координаты первой точки Y1:");
+Y1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите координаты первой точки Z1:");
+Z1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите координаты первой точки X2:");
+X2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите координаты первой точки Y2:");
+Y2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите координаты первой точки Z2:");
+Z2 = Convert.ToDouble(Console.ReadLine());
+double distance;
+distance = Math.Sqrt(Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2) + Math.Pow(Z2 - Z1, 2));
+                Console.WriteLine($"Расстояние между двумя точками в пространстве равно {distance}");
+                Console.ReadKey();*/
+
+// Задача 3++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*Console.WriteLine("Введите число ");
+int n = int.Parse(Console.ReadLine()!);
+for (int i = 1; i <= n; i++){
+    Console.Write($"{Math.Pow(i, 3)}, ");
+}*/
