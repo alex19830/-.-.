@@ -85,3 +85,29 @@ int day = Convert.ToInt32(Console.ReadLine());
 if (day > 0 && day <= 5) Console.WriteLine("Будний день");
 if (day == 6 || day == 7) Console.WriteLine("Выходной день");
 if (day > 7 || day <= 0) Console.WriteLine("День недели не найден (нумерация дней недели от 1 до 7)");*/
+
+// Базовые алгоритмы урок 2
+
+/*Console.WriteLine("Введите номер четверти");
+int num = int.Parse(Console.ReadLine()!);
+switch (num)
+{
+    case 1: {
+        Console.WriteLine("x > 0, y > 0");
+        break;
+    }case 2: {
+        Console.WriteLine("x < 0, y > 0");
+        break;
+    }case 3: {
+        Console.WriteLine("x < 0, y < 0");
+        break;
+    }case 4: {
+        Console.WriteLine("x > 0, y < 0");
+        break;
+    }
+    default:{
+        Console.WriteLine("Введено не верное число");
+        break;
+    }
+}*/
+
