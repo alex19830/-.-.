@@ -175,3 +175,150 @@ int n = int.Parse(Console.ReadLine()!);
 for (int i = 1; i <= n; i++){
     Console.Write($"{Math.Pow(i, 3)}, ");
 }*/
+
+// ФУНКЦИИ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Напишите программу, которая принимает на ввод число (А) и выдает сумму чисел от до А.
+/* Console.Write("Введите число: ");
+int limit = int.Parse(Console.ReadLine()!);
+Console.WriteLine($"Сумма чисел от 1 до {limit} равна {GetSum(limit)}");
+Console.Write("Введите число: ");
+int Num = int.Parse(Console.ReadLine()!);
+Console.WriteLine($"Сумма чисел от 1 до {Num} равна {GetSum(Num)}");
+
+//------------------МЕТОДЫ------------------------------
+int GetSum(int A){
+    int sum = 0;
+    for(int i = 1; i <= A; i++){
+        sum += i; // sum + i
+    }
+    return sum;
+} */
+
+/* c
+Console.WriteLine($"Произведение чисел от 1 до {N} равно {GetMultiply(N)}");
+
+//-------метод-----------
+int GetMultiply(int N){
+    int m = 1;
+    for ( int i = 1; i <= N; i++ ){
+        m = m * i;
+    }
+    return m;
+} */
+
+/* Console.WriteLine("Введите число: ");
+int N = int.Parse(Console.ReadLine()!);
+Console.WriteLine($"Количество цифр {N} равно {CountNums(N)}");
+string M = N.ToString();
+Console.Write($"Количество цифр {M} равно {CountNums2(M)}");
+//----------метод---------------
+int CountNums(int num){
+    int count = 0;
+    if (num == 0) return 1;
+    while (num > 0){
+        count++;
+        num = num / 10;
+    }
+    return count;
+}
+int CountNums2(string num){
+    int count = num.Length;
+    return count;
+} */
+
+/* int[] myArray = GetArray(8); 
+Console.WriteLine($"[{String.Join(",", myArray)}]");
+// -----------метод----------------
+int[] GetArray (int size){
+    int[] myArray = new int[size];
+    for(int i = 0; i < size; i++){
+        myArray[i] = new Random().Next(2);
+    }
+    return myArray;
+} */
+
+//+++++++++++++++++Урок 4. Функции. Домашняя работа. +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//------------------Задача. 1
+
+//Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+
+/* Console.Clear();
+Console.WriteLine("программа, принимающая два числа А и В и возводящая число А в натуральную степень В");
+int numA = 0;
+int numB = 0;
+int sum = 0;
+// ввод числа А
+while(true){
+    Console.WriteLine("Введите целое число А:");
+    if(int.TryParse(Console.ReadLine(), out int number)){
+        numA = number; break;
+    }
+    else Console.WriteLine("Некорректно указано число!\n");
+}
+// ввод числа В
+while(true){
+    Console.WriteLine("Введите целое натуральное число В:");
+    if(int.TryParse(Console.ReadLine(), out int number)){
+        if(number < 0){
+            Console.WriteLine("Вами введено НЕ натуральное число (отрицательное)!");
+            continue;
+        }
+        else numB = number; break;
+    }
+    else Console.WriteLine("Некорректно указано число!\n");
+}
+Console.WriteLine("число " + numA + " в степени " + numB + " = " + Calculate(numA, numB));
+int Calculate(int a, int b){
+    if (a == 0 && b == 0){
+        sum = 1;
+    }
+    else{
+        sum = a;
+        for(int i = 1; i < b; i++){
+            sum = sum * a;
+        }
+    }
+    return sum;
+} */
+//----------------------Задача. 2
+
+// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/* internal class Program{    
+    private static void Main(string[] args){
+        Console.Write("Введите число: ");
+        int number = Convert.ToInt32(Console.ReadLine()!);
+        int sum(int number){
+            int count = Convert.ToString(number).Length;
+            int a = 0;
+            int result = 0;
+            for (int i = 0; i < count; i++){
+                a = number - number % 10;
+                result = result + (number - a);
+                number = number / 10;
+            }
+            return result;
+        }
+        int sumNumber = sum(number);
+        Console.WriteLine("Сумма цифр в числе: " + sumNumber);
+    }
+} */
+
+//--------------------Задача 3
+// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+
+/* int[] array = new int[8];
+void RandomArray(int[] array){
+    Random rnd = new Random();
+    for (int i = 0; i < array.Length; i++){
+        array[i] = rnd.Next(0, 7);
+    }
+}
+void PrintArray(int[] array){
+    for (int i = 0; i < array.Length; i++){
+        Console.Write($"{array[i]} ");
+    }
+}
+RandomArray(array);
+PrintArray(array);
+ */
