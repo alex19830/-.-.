@@ -322,3 +322,189 @@ void PrintArray(int[] array){
 RandomArray(array);
 PrintArray(array);
  */
+
+/* int[] array = GetArray(12, -9, 9);
+Console.WriteLine($"[{String.Join(",", array)}]");
+
+int positiveSum = 0;
+int negativeSum = 0;
+
+foreach (int el in array){
+    if(el > 0){
+        positiveSum += el;
+    }
+    else{
+        negativeSum += el;
+    }
+}
+ Console.WriteLine($"Сумма положительных чисел равна {positiveSum}, а сумма отрицательных равна {negativeSum}");
+ //-------------Метод----------------------
+ int[] GetArray(int size, int minValue, int maxValue){
+    int[] res = new int[size];
+    for(int i = 0; i < size; i++){
+        res[i] = new Random().Next(minValue, maxValue = 1);
+    }
+    return res;
+ } */
+
+/* /***Задача 32:** Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
+
+[-4, -8, 8, 2] -> [4, 8, -8, -2]*/
+
+/* int[] array = GetArray(6, -100, 100);
+Console.WriteLine($"[{String.Join(",", array)}]");
+for(int i = 0; i < array.Length; i++){
+    array[i] *= -1;
+}
+
+Console.WriteLine($"[{String.Join(",", array)}]"); */
+
+/* int[] GetArray(int size, int minValue, int maxValue){
+    int[] res = new int[size];
+    for(int i = 0; i < size; i++){
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
+}  */
+
+/* Задача 33: Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+
+4; массив [6, 7, 19, 345, 3] -> нет
+
+3; массив [6, 7, 19, 345, 3] -> да */
+
+
+/* int[] array = GetArray(10, 1, 100);
+Console.WriteLine($"[{String.Join(",", array)}]");
+Console.WriteLine("Введите число: ");
+int a = int.Parse(Console.ReadLine()!);
+if(findElement(array, a)){
+    Console.WriteLine("Данный элемент в массиве есть");
+}
+else{
+    Console.WriteLine("Данный элемент в массиве не существует");
+}
+bool findElement(int[] array, int a){
+    foreach (int el in array){
+    if(el == a){
+        return true;
+    }
+} return false;
+} */
+
+/*Задача 35: Задайте одномерный массив из 123 случайных чисел. Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+Пример для массива из 5, а не 123 элементов. В своём решении сделайте для 123
+[5, 18, 123, 6, 2] -> 1
+[1, 2, 3, 6, 2] -> 0
+[10, 11, 12, 13, 14] -> 5
+*/
+
+/* int[] array = GetArray(123, 0, 1000);
+Console.WriteLine($"[{String.Join(",", array)}]");
+int CountElement(int[] array){   
+    int count = 0;
+    foreach(int el in array){
+        if(el >= 10 && el <= 99){
+            count++;
+        }
+    } 
+    return count;
+}
+Console.WriteLine($"Количество элементов в отрезке от 10 до 99 {CountElement(array)}"); */
+
+/* Задача 38: Задайте массив целых чисел от -10 до 10. Найдите разницу между максимальным и минимальным элементов массива.*/
+/* int[] array = GetArray(10, -10, 10);
+Console.WriteLine($"[{String.Join(",", array)}]");
+int DifNums(int[] array){
+    int min = array[0];
+    int max = array[0];
+    foreach (int el in array){
+    if(el > max){
+        max = el;
+    }
+    if(el < min){
+        min = el;
+    }
+} return max - min;
+}
+Console.WriteLine(DifNums(array)); */
+
+//++++++++++++Домашняя работа+++++++++++++++
+//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.[345, 897, 568, 234] -> 2
+
+/* int[] Array = getGenerateArray(10, 100, 999);
+printArr(Array);
+int count = getCountPositive(Array);
+int[] getGenerateArray(int length, int start, int end){
+    int[] result = new int[length];
+    for (int i = 0; i < length; i++){
+        result[i] = new Random().Next(start, end + 1);
+    }
+    return result;
+}
+void printArr( int[] array )
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++){
+        Console.Write(array[i]);
+        if (i  < array.Length -1){
+           Console.Write(", ");
+        }
+    }
+    Console.WriteLine("]");
+}
+int getCountPositive(int[] array){
+    int count = 0;
+    for (int i = 0; i < array.Length; i++){
+        if (array[i] % 2 == 0){
+            count = count + 1;
+        }
+    }
+    return count;
+}
+Console.WriteLine($"Сумма положительных чисел в массиве равна {count}"); */
+
+//Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных индексах. [3, 7, 23, 12] -> 19 [-4, -6, 89, 6] -> 0
+/* System.Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[size];
+Arraywithrandomnumbers(array);
+int sum= 0;
+for (int k = 0; k < array.Length; k+=2){
+    sum += array[k];
+}
+void Arraywithrandomnumbers(int[] array){
+Random rnd = new Random();
+for (int i = 0; i < array.Length; i++){
+    array[i] = rnd.Next(-99,100);
+    }
+}
+System.Console.WriteLine("Наш массив: [" + string.Join(", ", array) + "]");
+System.Console.WriteLine($"Сумма чисел на нечетных индексах {sum}"); */
+
+//Задача 37: Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве. [1 2 3 4 5] -> 5 8 3 [6 7 3 6] -> 36 21
+/* Console.Clear();
+void FillArray(int[] arr){
+    for (int i = 0; i < arr.Length; i++){
+        arr[i] = new Random().Next(100);
+    }
+}
+void PrintArray(int[] arr){
+    for (int i = 0; i < arr.Length; i++){
+        Console.Write($"{arr[i]} ");
+    }
+}
+Console.WriteLine("Задайте длину массива");
+int length = Convert.ToInt32(Console.ReadLine());
+
+int[] nums = new int[length];
+int[] result = new int[nums.Length / 2];
+
+FillArray(nums);
+PrintArray(nums);
+
+Console.WriteLine();
+for (int i = 0; i < result.Length; i++){
+    result[i] = nums[i] * nums[nums.Length - 1 - i];
+}
+PrintArray(result); */
