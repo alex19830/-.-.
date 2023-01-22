@@ -465,22 +465,22 @@ int getCountPositive(int[] array){
 Console.WriteLine($"Сумма положительных чисел в массиве равна {count}"); */
 
 //Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных индексах. [3, 7, 23, 12] -> 19 [-4, -6, 89, 6] -> 0
-/* System.Console.WriteLine("Введите размер массива");
+System.Console.WriteLine("Введите размер массива");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[size];
 Arraywithrandomnumbers(array);
 int sum= 0;
-for (int k = 0; k < array.Length; k+=2){
+for (int k = 1; k < array.Length; k+=2){
     sum += array[k];
 }
 void Arraywithrandomnumbers(int[] array){
 Random rnd = new Random();
-for (int i = 0; i < array.Length; i++){
+for (int i = 1; i < array.Length; i++){
     array[i] = rnd.Next(-99,100);
     }
 }
 System.Console.WriteLine("Наш массив: [" + string.Join(", ", array) + "]");
-System.Console.WriteLine($"Сумма чисел на нечетных индексах {sum}"); */
+System.Console.WriteLine($"Сумма чисел на нечетных индексах {sum}");
 
 //Задача 37: Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве. [1 2 3 4 5] -> 5 8 3 [6 7 3 6] -> 36 21
 /* Console.Clear();
