@@ -1,48 +1,144 @@
-﻿//Задача №41. 
-//Пользователь вводит с клавиатуры M чисел. 
-//Посчитайте, сколько чисел строго больше 0 ввёл пользователь.
-//0, 7, 8, -2, -2 -> 2
-//1, -7, 567, 89, 223-> 4
+﻿//-------------------Домашняя работа---------------------------------
 
-/* Console.WriteLine(" Введите числа (через пробел!): ");
-int[] array = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-int count = 0;
+//Задача 47
+//Задайте двумерный массив размером m×n, 
+//заполненный случайными вещественными числами.
 
-for (int i = 0; i < array.Length; i++)
+/* Console.WriteLine("введите количество строк");
+int linesVol = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите количество столбцов");
+int columnsVol = Convert.ToInt32(Console.ReadLine());
+double[,] numbers = new double[linesVol, columnsVol];
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
+
+void FillArrayRandomNumbers(double[,] array)
 {
-    if (array[i] > 0)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        count++;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
+        }
     }
 }
-Console.WriteLine($" Количество чисел больше 0: {count}"); */
 
-//Задача №43. 
-//Написать программу, 
-//которая на вход принимает массив из любого количества элементов (не менее 6) в промежутке от 0 до 100, 
-//а на выходе выводит этот же массив, но отсортированный по возрастанию(от меньшего числа к большему).
-
-/* Console.WriteLine("Введите кол-во элементов массива:");
-int size = int.Parse(Console.ReadLine());
-int[] Array1 = new int[size];
-int tmp = 0;
-Random r = new Random();
-
-for (int i = 0; i < size; i++)
-    Array1[i] = r.Next(0, 100);
-
-foreach (int x in Array1)
-    Console.Write(x + " ");
-
-for (int i = 0; i < size; i++)
-    for (int j = i + 1; j < size; j++)
-
-        if (Array1[i] > Array1[j])
+void PrintArray(double[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write("[ ");
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            tmp = Array1[j];
-            Array1[j] = Array1[i];
-            Array1[i] = tmp;
+            Console.Write(array[i, j] + " ");
         }
-Console.WriteLine();
-foreach (int x in Array1)
-    Console.Write(x + " "); */
+        Console.Write("]");
+        Console.WriteLine("");
+    }
+} */
+
+//Задача 50. Напишите программу, которая на вход принимает число, 
+//проверяя есть ли такое число в двумерном массиве и возвращает сообщение о том, 
+//что оно найдено или же указание, что такого элемента нет.
+
+/* Console.WriteLine("Введите число: ");
+int num = int.Parse(Console.ReadLine()!);
+Console.Write("Введите количество строк: ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.Write("Введите количество столбцов: ");
+int colums = int.Parse(Console.ReadLine()!);
+Console.Write("Введите минимальное значение: ");
+int a = int.Parse(Console.ReadLine()!);
+Console.Write("Введите максимальное значение: ");
+int b = int.Parse(Console.ReadLine()!);
+int[,] array = GetArray(rows, colums, a, b);
+PrintArray(array);
+ElArray(array);
+int[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+    int[,] array = new int[m, n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return array;
+}
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]}");
+            Console.Write(" ");
+        }
+        Console.WriteLine();
+    }
+}
+void ElArray(int[,] array)
+{
+    bool res = false;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (num == array[i, j])
+            {
+                res = true;
+            }
+        }
+    }
+    if (res == true)
+    {
+        Console.WriteLine($"{num} -> Такое число в массиве есть");
+    }
+    else
+    {
+        Console.WriteLine($"{num} -> Такого числа в массиве нет");
+    }
+} */
+
+//Задача 52. Задайте двумерный массив из целых чисел. 
+//Найдите среднее арифметическое элементов в каждом столбце.
+
+/* int[,] array = GetArray(3, 4, 1, 10);
+PrintArray(array);
+
+for (int j = 0; j < array.GetLength(1); j++)
+{
+    double sum = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        sum += array[i, j];
+    }
+    Console.Write($"{sum / array.GetLength(0)} ");
+}
+Console.ReadLine();
+
+int[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+    int[,] array = new int[m, n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return array;
+}
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]}");
+            Console.Write($" ");
+        }
+        Console.WriteLine();
+    }
+} */
